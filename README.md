@@ -1,4 +1,0 @@
-envlinux
-========
-
-linux enviroment
