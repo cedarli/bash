@@ -1,0 +1,10 @@
+#! /bin/sh
+if [ -f "$HOME/.bashrc.backup" ] ; then
+    mv -T $HOME/.bashrc.backup $HOME/.bashrc
+    echo "restore $HOME/.bashrc.backup to $HOME/.bashrc"
+fi
+if [ -f "$HOME/.profile.backup" ] ; then
+    mv -T $HOME/.profile.backup $HOME/.profile
+    echo "restore $HOME/.profile.backup $HOME/.profile"
+    echo "Uninstall success"
+fi

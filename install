@@ -1,0 +1,15 @@
+#! /bin/sh
+if [ -f "$HOME/.bashrc" ] ; then
+    mv -T $HOME/.bashrc $HOME/.bashrc.backup
+    echo "backup $HOME/.bashrc to $HOME/.bashrc.backup"
+fi
+if [ -f "$HOME/.profile" ] ; then
+    mv -T $HOME/.profile $HOME/.profile.backup
+    echo "backup $HOME/.profile to $HOME/.profile.backup"
+fi
+if [ -d "$HOME" ] ; then
+    path=${PWD}
+    ln -si -T $path/.bashrc $HOME/.bashrc
+    ln -si -T $path/.profile $HOME/.profile
+    echo "Install success"
+fi
