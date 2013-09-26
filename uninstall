@@ -8,3 +8,13 @@ if [ -f "$HOME/.profile.backup" ] ; then
     echo "restore $HOME/.profile.backup $HOME/.profile"
     echo "Uninstall success"
 fi
+if [ -f "$HOME/.bash_aliases.backup" ] ; then
+    mv -T $HOME/.bash_aliases.backup $HOME/.bash_aliases
+    echo "restore $HOME/.bash_aliases.backup $HOME/.bash_aliases"
+    echo "Uninstall success"
+fi
+if [ -f "$HOME/.bash_colors.backup" ] ; then
+    mv -T $HOME/.profile.backup $HOME/.profile
+    echo "restore $HOME/.colors.backup $HOME/.bash_colors"
+    echo "Uninstall success"
+fi
