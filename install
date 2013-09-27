@@ -11,7 +11,7 @@ if [ -f "$HOME/.bash_aliases" ] ; then
     mv -T $HOME/.bash_aliases $HOME/.bash_aliases.backup
     echo "backup $HOME/.bash_aliases to $HOME/.bash_aliases.backup"
 fi
-if [ -f "$HOME/.bash_colorsi" ] ; then
+if [ -f "$HOME/.bash_colors" ] ; then
     mv -T $HOME/.bash_colors $HOME/.bash_colors.backup
     echo "backup $HOME/.bash_colors to $HOME/.bash_colors.backup"
 fi
