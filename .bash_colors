@@ -1,5 +1,5 @@
 # Reset
-ColorOff='\e[0m'       # Text Reset
+Off='\e[0m'       # Text Reset
 
 # Regular Colors
 Black='\e[0;30m'        # Black
