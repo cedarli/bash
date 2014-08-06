@@ -35,4 +35,4 @@ alias cedar="cd $HOME/.cedar"
 alias bin=". bin"
 alias apk=". apk"
 alias doc=". doc"
-alias afind='find `pwd` -name .repo -a -name .git -prune -o -iname $1'
+alias afind='find `pwd -P` -name .repo -a -name .git -prune -o -iname $1'
