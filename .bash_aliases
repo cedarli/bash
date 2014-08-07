@@ -35,4 +35,14 @@ alias cedar="cd $HOME/.cedar"
 alias bin=". bin"
 alias apk=". apk"
 alias doc=". doc"
-alias afind='find `pwd -P` -name .repo -a -name .git -prune -o -iname $1'
+
+#File operations
+alias afind='find -name .repo -a -name .git -prune -o -iname'
+alias dfind='find -type d -iname'
+alias ffind='find -type f -iname'
+
+#system mamager
+alias psg='ps aux|grep'   #查看
+alias meminfo='free -m -l -t'
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4'
