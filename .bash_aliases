@@ -29,6 +29,7 @@ alias pacinfo='pacman -Q $1'
 alias froyo=". froyo"
 alias ics=". ics"
 alias kitkat=". kitkat"
+alias mitwo=". mitwo"
 alias android=". android"
 alias debug=". debug"
 alias cedar="cd $HOME/.cedar"
