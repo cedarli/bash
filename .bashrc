@@ -79,6 +79,7 @@ find_git_branch () {
     git_branch=''
 }
 
+PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:{'$Green'\w'$Off'}$git_branch\$ '
 else
