@@ -60,8 +60,27 @@ if [ -f ~/.bash_colors ]; then
     . ~/.bash_colors
 fi
 
+find_git_branch () {
+    local dir=. head
+    until [ "$dir" -ef / ]; do
+        if [ -f "$dir/.git/HEAD" ]; then
+            head=$(< "$dir/.git/HEAD")
+            if [[ $head = ref:\ refs/heads/* ]]; then
+                git_branch=">${head#*/*/}"
+            elif [[ $head != '' ]]; then
+                git_branch=">(detached)"
+            else
+                git_branch=">(unknow)"
+            fi
+            return
+        fi
+        dir="../$dir"
+    done
+    git_branch=''
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:{'$Green'\w'$Off'}\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:{'$Green'\w'$Off'}$git_branch\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
