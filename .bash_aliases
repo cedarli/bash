@@ -36,6 +36,7 @@ alias cedar="cd $HOME/.$USER"
 alias bin=". bin"
 alias apk=". apk"
 alias doc=". doc"
+alias cts=". cts"
 
 #File operations
 alias afind='find -name .repo -a -name .git -prune -o -iname'
