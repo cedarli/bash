@@ -61,27 +61,12 @@ if [ -f ~/.bash_colors ]; then
 fi
 
 find_git_branch () {
-    local dir=. head
-    until [ "$dir" -ef / ]; do
-        if [ -f "$dir/.git/HEAD" ]; then
-            head=$(< "$dir/.git/HEAD")
-            if [[ $head = ref:\ refs/heads/* ]]; then
-                git_branch=">${head#*/*/}"
-            elif [[ $head != '' ]]; then
-                git_branch=">(detached)"
-            else
-                git_branch=">(unknow)"
-            fi
-            return
-        fi
-        dir="../$dir"
-    done
-    git_branch=''
+   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/<\1>/'
 }
 
-PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:{'$Green'\w'$Off'}$git_branch\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:{'$Green'\w'$Off'}$(find_git_branch)\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -115,3 +100,4 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
