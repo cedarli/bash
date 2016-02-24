@@ -15,11 +15,16 @@ if [ -f "$HOME/.bash_colors" ] ; then
     mv -T $HOME/.bash_colors $HOME/.bash_colors.backup
     echo "backup $HOME/.bash_colors to $HOME/.bash_colors.backup"
 fi
+if [ -f "$HOME/.bash_utils" ] ; then
+    mv -T $HOME/.bash_utils $HOME/.bash_utils.backup
+    echo "backup $HOME/.bash_utils to $HOME/.bash_utils.backup"
+fi
 if [ -d "$HOME" ] ; then
     path=${PWD}
     ln -si -T $path/.bashrc $HOME/.bashrc
     ln -si -T $path/.profile $HOME/.profile
     ln -si -T $path/.bash_aliases $HOME/.bash_aliases
     ln -si -T $path/.bash_colors $HOME/.bash_colors
+    ln -si -T $path/.bash_utils $HOME/.bash_utils
     echo "Install success"
 fi
