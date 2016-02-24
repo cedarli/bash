@@ -60,10 +60,13 @@ if [ -f ~/.bash_colors ]; then
     . ~/.bash_colors
 fi
 
+if [ -f ~/.bash_utils ]; then
+    . ~/.bash_utils
+fi
+
 find_git_branch () {
    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/<\1>/'
 }
-
 
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:{'$Green'\w'$Off'}$(find_git_branch)\$ '
