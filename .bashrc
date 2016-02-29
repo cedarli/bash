@@ -69,7 +69,7 @@ find_git_branch () {
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:{'$Green'\w'$Off'}$(find_git_branch)\$ '
+    PS1='${debian_chroot:+($debian_chroot)}'$Green'\u'$Off'@\h:{'$Green'\w'$Off'}$(find_git_branch)\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
