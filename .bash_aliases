@@ -43,7 +43,7 @@ alias doc=". doc"
 alias cts=". cts"
 
 #File operations
-alias afind='find -name .repo -a -name .git -prune -o -iname $1'
+alias afind='find -name .repo -a -name .git -prune -o -iname $*'
 alias dfind='find -name .repo -a -name .git -prune -o -type d -iname'
 alias ffind='find -type f -iname'
 
