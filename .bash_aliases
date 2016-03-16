@@ -2,6 +2,7 @@ alias ls='ls --color=auto'
 alias ll='ls -l' 
 alias la='ls -A'
 alias lla='ls -la'
+alias lsd='find . -maxdepth 1 -type d | sort' #list directory of current directory.
 
 alias more='less'
 
@@ -26,6 +27,8 @@ alias openports='netstat --all --numeric --programs --inet'
 alias pacsearch='pacman -Ss $1'
 alias pacinstall='sudo pacman -S $1'
 alias pacinfo='pacman -Q $1'
+
+#project
 alias froyo=". froyo"
 alias ics=". ics"
 alias kitkat=". kitkat"
