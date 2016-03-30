@@ -1,0 +1,12 @@
+if [ -f ~/.sshagent.env ];then
+	. ~/.sshagent.env > /dev/null
+	if ! kill -0 $SSH_AGENT_PID > /dev/null 2>$1; then
+		echo "Stage agent file found. Swaping new agent ..."
+		eval `ssh-agent |tee ~/.sshagent.env`
+		ssh-add
+	fi
+else
+	echo "Starting ssh-agent ..."
+	eval `ssh-agent |tee ~/.sshagent.env`
+	ssh-add
+fi
